@@ -5,6 +5,8 @@ from currency_converter import views
 
 urlpatterns = [
 
-    url(r'^$', views.home, name='home')
+    url(r'^$', views.home, name= 'home'),
+    url(r'^home$', views.home, name='home'),
+    url(r'^savu$', views.savu, name= 'buton'),
     
 ]

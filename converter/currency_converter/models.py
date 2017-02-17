@@ -10,8 +10,5 @@ class history(models.Model):
       From_value = models.DecimalField(max_digits=10, decimal_places=2)
       To_value = models.DecimalField(max_digits=10, decimal_places=2)
 
-      def __unicode__(self):
+      def ret(self):
       	return self.Date
-
-
-

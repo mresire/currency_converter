@@ -36,33 +36,41 @@
   </head>
   <body>
     
-    <form>
+    <form method="post" action="savu">{% csrf_token %}
      
           <legend>Convert From</legend>
           <p>
              <label>Select list</label>
-             <select id = "myList">
-               <option value = "1">Dollars</option>
-               <option value = "2">Euro</option>
-               <option value = "3">Rwf</option>
+             <select id = "myList" name="From">
+               <option value = "USD">Dollars</option>
+               <option value = "Euro">Euro</option>
+               <option value = "Rwf">Rwf</option>
                
              </select>
           </p>
-          <input type="number" name="" class="inptbx">
+          <input type="number" name="From_value" class="inptbx">
 
           <legend>Convert To</legend>
           <p>
              <label>Select list</label>
-             <select id = "myList">
-               <option value = "1">Dollars</option>
-               <option value = "2">Euro</option>
-               <option value = "3">Rwf</option>
+             <select id = "myList" name="To">
+               <option value = "USD">Dollars</option>
+               <option value = "Euro">Euro</option>
+               <option value = "Rwf">Rwf</option>
                
              </select>
           </p>
-          <input type="number" name="" class="inptbx1">
-       <button class="btn">Convert</button>
+          <input type="number" name="To_value" class="inptbx1">
+       <button class="btn" name="savu">Convert</button>
        
     </form>
+    <div id="history">
+  <h4>History</h4>
+  <ul>
+    {% for item in all %}
+    <li><a href="admin">{{item.Date}}:  <span> {{item.From_value}}{{item.From}}  </span><span>---> {{item.To_value}}{{item.To}}</span> </a></li>
+    {% endfor %}
+  </ul>
+</div>
   </body>
 </html>
